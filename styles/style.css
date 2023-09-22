@@ -1,3 +1,318 @@
+
+
+.page {
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: 'wght' var(--main-font-weight);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--accent-color);
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header__container {
+  border: 2px solid var(--accent-color, #000);
+  margin-block-start: 102px;
+  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  background-color: var(--background-color);
+}
+
+.header__title {
+  color: var(--accent-color, #000);
+  font-family: var(--accent-font, sans-serif);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-weight: var(--main-font-weight, 400);
+  text-transform: uppercase;
+  text-align: center;
+  padding-block-start: 136px;
+  padding-block-end: 20px;
+}
+
+.header__text {
+  color: var(--accent-color, #000);
+  font-family: var(--accent-font, sans-serif);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-weight: var(--main-font-weight, 400);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.theme-menu {
+  padding-block: 23px;
+  display: flex;
+  justify-content: center;
+}
+
+.theme-menu__list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.theme-menu__item {
+  color: var(--accent-color, #000);
+  font-family: var(--accent-font, sans-serif);
+  font-size: 14px;
+}
+
+.theme-menu__button {
+  padding: 0;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-block-end: -3px;
+  transform: scaleX(0);
+  background-color: currentColor;
+  transition:  0.3s ease;
+  transform-origin: center left;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.theme-menu__item:nth-child(1) .theme-menu__button {
+  left: 2px;
+}
+
+.theme-menu__item:nth-child(2) .theme-menu__button {
+  right: 5px;
+}
+
+.theme-menu__item:nth-child(3) .theme-menu__button {
+  left: 10px;
+}
+
+.theme-menu__button:disabled {
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled, .theme-menu__button:hover {
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  left: -20px;
+  animation: loading 0.5s infinite ease-in-out alternate;
+}
+
+
+@keyframes loading {
+  0% {
+    left: -20px;
+  }
+  100% {
+    left: -24px;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 104px;
+}
+
+.container {
+  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--accent-color, #000);
+  background-color: var(--background-color);
+}
+
+.card-title {
+  padding: 5px 5px 5px 10px;
+  font-size: 18px;
+  font-weight: var(--accent-font-weight);
+}
+
+.card__footer {
+  padding: 27px 25px 25px 25px;
+}
+
+.card-image {
+  aspect-ratio: 1/1;
+}
+
+.card-text {
+  font-weight: var(--main-font-weight);
+  font-size: 18px;
+  line-height: 21px; 
+  padding-block-end: 27px;
+}
+
+.card-text__your {
+  font-size: 18px;
+  line-height: 21px; 
+  padding-block-end: 25px;
+}
+
+.button-container{
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+}
+
+.card__like-button {
+  color: var(--accent-color, #000);
+  font-family: var(--accent-font, sans-serif);
+  padding: 9px 31px;
+  border: 2px solid var(--accent-color);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.card__like-button::before, .save::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transition: 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.card__like-button:hover::before, .save:hover::before {
+  transform: scaleX(1);
+}
+
+.card__like-button:focus-visible, .save:focus-visible {
+  box-shadow: 2px 2px 0px 0px #000;
+  transition: 0.3s ease;
+}
+
+.card-image-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-image-description {
+  text-transform: uppercase;
+  font-size: 14px;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  font-family: var(--accent-font);
+  mix-blend-mode: hard-light;
+  opacity: 0.6;
+  text-shadow:
+  -1px 0 #fff, 
+ 0 1px #fff, 
+ 1px 0 #fff, 
+ 0 -1px #fff;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.save {
+  font-size: 14px;
+  line-height: 0.9;
+  background-color: var(--background-color);
+  font-family: var(--accent-font, sans-serif);
+  border: 2px solid var(--accent-color, #000);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  margin-block: 54px 105px;
+  padding: 15px 20px;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.save-image {
+  height: 21px;
+  width: 21px;
+}
+
+.button__text {
+  position: relative;
+  z-index: 10;
+}
+
+.card__like-button:hover .button__text {
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
+}
+
+.save:hover .save-image, .button__text {
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
+}
+
+.card__icon-button, .card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button > *:not(:focus) {
+  border: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+  transition: 0.3s ease;
+}
+
+
+@supports (text-stroke: 10px) or (-webkit-text-stroke: 10px) {
+  .card-image-description {
+    text-stroke: 1px transparent;
+    -webkit-text-stroke: 1px #fff;
+    text-shadow: none;
+  }
+}
+
+
+/*TODO:
+1) исправить границу при фокусе на иконке с искрами 
+2) сделать анимацию иконки с искрами
+3) сделать всплывающее окно
+4) проверить на разных резолюшенс
+5) проверить на валидаторе
+*/
+
 /* Здесь вы напишете основную часть стилей страницы.
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
@@ -13,8 +328,3 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
-
-.page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-}
