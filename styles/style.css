@@ -215,7 +215,7 @@
 }
 
 .card__like-button:focus-visible, .save:focus-visible {
-  box-shadow: 2px 2px 0px 0px #000;
+  box-shadow: 2px 2px 0px 0px var(--accent-color);
   transition: 0.3s ease;
 }
 
@@ -226,7 +226,6 @@
 }
 
 .card-image-description {
-  text-transform: uppercase;
   font-size: 14px;
   position: absolute;
   right: 25px;
@@ -234,11 +233,19 @@
   font-family: var(--accent-font);
   mix-blend-mode: hard-light;
   opacity: 0.6;
-  text-shadow:
-  -1px 0 #fff, 
- 0 1px #fff, 
- 1px 0 #fff, 
- 0 -1px #fff;
+  text-shadow: -1px 0 var(--button-text-color), 0 1px var(--button-text-color), 1px 0 var(--button-text-color), 0 -1px var(--button-text-color);
+}
+
+.card:nth-child(1) .card-image-description  {
+  text-transform: uppercase;
+}
+
+.card:nth-child(2) .card-image-description  {
+  text-transform: uppercase;
+}
+
+.card:nth-child(3) .card-image-description  {
+  text-transform: uppercase;
 }
 
 .footer {
@@ -286,6 +293,7 @@
 .card__icon-button {
   cursor: pointer;
   height: 40px;
+  transform-origin: center center;
 }
 
 .card__icon-button, .card__icon-button:focus {
@@ -383,23 +391,102 @@
 }
 
 
+/*DIALOG*/
+
+.dialog {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background: var(--background-color);
+  border: 2px solid var(--accent-color);
+ 
+  color: var(--accent-color);
+  padding: 32px 32px;
+}
+
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.dialog__text {
+  width: clamp(12.375rem, 11.5827rem + 3.3803vw, 14.625rem);
+}
+
+.dialog::backdrop {
+  background-color: currentColor;
+  opacity: 0.75;
+}
+
+.dialog-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog__form-button {
+  text-transform: uppercase;
+  width: clamp(16.0625rem, 15.2702rem + 3.3803vw, 18.3125rem);
+  border: 2px solid var(--accent-color);
+  padding: 9px 17px;
+  cursor: pointer;
+}
+
+.dialog-image {
+  width: 40px;
+  height: 40px;
+}
+
 
 @supports (text-stroke: 10px) or (-webkit-text-stroke: 10px) {
   .card-image-description {
     text-stroke: 1px transparent;
-    -webkit-text-stroke: 1px #fff;
+    -webkit-text-stroke: 1px var(--button-text-color);
     text-shadow: none;
   }
 }
 
+/*FILTERS*/
+
+.card:nth-child(2) .card-image {
+  filter: contrast(550%);
+}
+
+.card:nth-child(3) .card-image {
+  filter: brightness(15%);
+}
+
+.card:nth-child(4) .card-image {
+  filter: blur(3px);
+}
+
+.card:nth-child(5) .card-image {
+  filter: grayscale(0.8);
+}
+
+.card:nth-child(6) .card-image {
+  filter: saturate(58%);
+}
+
+.card:nth-child(7) .card-image {
+  filter: brightness(200%) saturate(60%) sepia(90%);
+}
+
+.card:nth-child(8) .card-image {
+  filter: invert(0.9);
+}
+
+
+@media (width <= 375px) {
+  /*SOMETHING*/
+}
 
 /*TODO:
-1) исправить границу при фокусе на иконке с искрами 
-2) сделать анимацию иконки с искрами
-3) сделать всплывающее окно
-4) проверить на разных резолюшенс
-5) проверить на валидаторе
-6) исправить SVG удалить мусор
+
+1) проверить на разных резолюшенс
+2) проверить на валидаторе
 */
 
 /* Здесь вы напишете основную часть стилей страницы.
