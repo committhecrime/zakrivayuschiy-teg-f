@@ -170,13 +170,13 @@
 .card-text {
   font-weight: var(--main-font-weight);
   font-size: 19px;
-  line-height: 21px; 
+  line-height: 21px;
   padding-block-end: 27px;
 }
 
 .card-text__your {
   font-size: 19px;
-  line-height: 21px; 
+  line-height: 21px;
   padding-block-end: 25px;
 }
 
