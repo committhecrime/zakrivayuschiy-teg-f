@@ -172,16 +172,15 @@
   font-size: 19px;
   line-height: 21px; 
   padding-block-end: 27px;
-  font-stretch:  120%;
 }
 
 .card-text__your {
-  font-size: 18px;
+  font-size: 19px;
   line-height: 21px; 
   padding-block-end: 25px;
 }
 
-.button-container{
+.button-container {
   display: flex;
   justify-content: end;
   gap: 6px;
@@ -237,15 +236,15 @@
   text-shadow: -1px 0 var(--button-text-color), 0 1px var(--button-text-color), 1px 0 var(--button-text-color), 0 -1px var(--button-text-color);
 }
 
-.card:nth-child(1) .card-image-description  {
+.card:nth-child(1) .card-image-description {
   text-transform: uppercase;
 }
 
-.card:nth-child(2) .card-image-description  {
+.card:nth-child(2) .card-image-description {
   text-transform: uppercase;
 }
 
-.card:nth-child(3) .card-image-description  {
+.card:nth-child(3) .card-image-description {
   text-transform: uppercase;
 }
 
