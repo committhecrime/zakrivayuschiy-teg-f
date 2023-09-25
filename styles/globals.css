@@ -40,6 +40,10 @@ input {
   padding: 0;
 }
 
+button:focus {
+  outline: none;
+}
+
 ul,
 ol {
   list-style: none;

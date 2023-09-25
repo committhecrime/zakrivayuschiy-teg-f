@@ -16,19 +16,22 @@
   --accent-font-weight: 785;
 }
 
+ 
+
 :root.theme-light {
   --background-color: #fff;
-  --accent-color: #000;
   --button-text-color: #fff;
   --background-image: repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
                       repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
                       repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  --accent-color: #000;
   --main-font-weight: 400;
   --accent-font-weight: 700;
-}
+} 
+
 
 @media (prefers-color-scheme: dark) {
-  :root.theme-auto {
+  :root {
     --background-color: #000;
     --button-text-color: #00CC14;
     --background-image: repeating-linear-gradient(to right, #000, #000 2px, transparent 2px, transparent 4px),
@@ -41,7 +44,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  :root.theme-auto {
+  :root {
     --background-color: #fff;
     --button-text-color: #fff;
     --background-image: repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
