@@ -157,7 +157,8 @@
 
 .card-image {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: 50% 50%;
   aspect-ratio: 1/1;
 }
 
@@ -167,7 +168,12 @@
   padding-block-end: 23px;
 }
 
+.card-text:last-of-type {
+  padding-block-end: 0;
+}
+
 .button-container {
+  margin-block-start: 23px;
   display: flex;
   justify-content: end;
   gap: 6px;
@@ -193,6 +199,10 @@
 
 .button:hover::before {
   transform: scaleX(1);
+}
+
+.button:focus {
+  outline: none;
 }
 
 .button:focus-visible {
@@ -251,20 +261,22 @@
 .save-image {
   height: 21px;
   width: 21px;
+  color: var(--button-text-color, #fff);
+  mix-blend-mode: difference;
 }
 
 .button__text {
   position: relative;
   z-index: 10;
-}
-
-.button:hover .button__text {
   color: var(--button-text-color, #fff);
   mix-blend-mode: difference;
 }
 
+.button:hover .button__text {
+  mix-blend-mode: difference;
+}
+
 .save:hover .save-image {
-  color: var(--button-text-color, #fff);
   mix-blend-mode: difference;
 }
 
@@ -377,16 +389,12 @@ dialog[open] {
 
 @media (width <= 375px) {
 
-  .container {
-    gap: 49px;
-  }
-
   .main {
     margin-block-start: 100px;
   }  
 
- .header__title {
-  padding-block-start: 120px;
+ .header__link{
+  margin-block-start: 120px;
  }
 
  .save {
