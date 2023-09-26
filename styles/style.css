@@ -26,17 +26,15 @@
 
 .header__link {
   text-decoration: none;
-}
-
-.header__title {
+  display: block;
   color: currentColor;
   font-family: var(--accent-font, fantasy);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   font-weight: var(--main-font-weight, 400);
   text-transform: uppercase;
   text-align: center;
-  padding-block-start: 136px;
-  padding-block-end: 20px;
+  margin-block-start: 136px;
+  margin-block-end: 20px;
 }
 
 .header__text {
