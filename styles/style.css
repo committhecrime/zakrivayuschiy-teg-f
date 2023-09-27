@@ -52,15 +52,12 @@
   justify-content: center;
 }
 
-.header__theme-menu {
-  transform: translateX(10px);
-}
-
 .theme-menu__list {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 14px;
+  transform: translateX(10px);  
 }
 
 .theme-menu__item {
@@ -152,7 +149,13 @@
 }
 
 .card__footer {
-  padding: 30px 25px 26px 25px;
+  padding: 25px;
+}
+
+.card__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
 }
 
 .card-image {
@@ -165,7 +168,7 @@
 .card-text {
   font-size: 19px;
   line-height: 21px;
-  padding-block-end: 23px;
+
 }
 
 .card-text:last-of-type {
@@ -173,7 +176,7 @@
 }
 
 .button-container {
-  margin-block-start: 23px;
+  margin-block-start: 25px;
   display: flex;
   justify-content: end;
   gap: 6px;
@@ -228,16 +231,8 @@
   opacity: 0.5;
   text-shadow: -1px 0 var(--button-text-color, #fff), 0 1px var(--button-text-color, #fff), 1px 0 var(--button-text-color, #fff), 0 -1px var(--button-text-color, #fff);
 }
-/*По макету только в первых 3-х карточках слова uppercase'ом, далее обычным*/
-.card:nth-child(1) .card-image-description {
-  text-transform: uppercase;
-}
 
-.card:nth-child(2) .card-image-description {
-  text-transform: uppercase;
-}
-
-.card:nth-child(3) .card-image-description {
+.card-image-description__uppercase {
   text-transform: uppercase;
 }
 
@@ -348,10 +343,10 @@ dialog[open] {
 }
 
 
-@supports (-webkit-text-stroke: 1px var(--button-text-color, #fff)) or (text-stroke: 1px var(--button-text-color, #fff)) {
+@supports (-webkit-text-stroke: 1px var(--background-color, #fff)) or (text-stroke: 1px var(--background-color, #fff)) {
   .card-image-description {
-    text-stroke: 1px var(--button-text-color, #fff);
-    -webkit-text-stroke: 1px var(--button-text-color, #fff);
+    text-stroke: 1px var(--background-color, #fff);
+    -webkit-text-stroke: 1px var(--background-color, #fff);
     text-shadow: none;
   }
 }
@@ -396,6 +391,10 @@ dialog[open] {
   margin-block-start: 120px;
  }
 
+ .card-image-description {
+  right: 11px;
+ }
+
  .save {
   flex-direction: column;
  }
@@ -406,6 +405,8 @@ dialog[open] {
  }
 }
 
+
+* { outline: 1px solid yellow; }
 /*TODO:
 
 1) redo labels on cards;
