@@ -386,14 +386,13 @@ dialog[open] {
   filter: invert(0.9);
 }
 
-
 @media (width <= 375px) {
 
   .main {
     margin-block-start: 100px;
   }  
 
- .header__link{
+ .header__link {
   margin-block-start: 120px;
  }
 
